@@ -22,6 +22,9 @@ def study_plan_tool(topic):
         "Day 3: Build a small project"
     )
 
+def joke_tool():
+    return "Here is a joke."
+
 def ask_llm(user_input):
     response = client.responses.create(
         model="gpt-5.5",
@@ -38,6 +41,9 @@ def agent(user_input):
 
     elif "study plan" in lower:
         return study_plan_tool(user_input)
+
+    elif "joke" in lower:
+        return joke_tool()
 
     else:
         return ask_llm(user_input)
